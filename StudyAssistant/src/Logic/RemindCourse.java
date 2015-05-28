@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import Entity.Courserecord;
@@ -71,7 +72,11 @@ public class RemindCourse {
 				case 1:// 上课前15分钟提醒
 					if (l > 0 && l < 15 * 60 * 1000 && state == 0) {
 						state = 1;
-						System.out.println("上课前15分钟的提醒,课程号：" + courseNum);
+						//System.out.println("上课前15分钟的提醒,课程号：" + courseNum);
+						
+						JOptionPane.showMessageDialog(null, "15分钟内有课程:"
+								+ course.getName(), "系统信息",
+								JOptionPane.INFORMATION_MESSAGE);
 					}
 					break;
 				}

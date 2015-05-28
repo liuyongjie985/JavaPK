@@ -79,7 +79,7 @@ public class AddTestUI extends JDialog implements ActionListener {
 			panel.add(lblNewLabel_2);
 
 			time = new JTextField();
-			time.setText("2015-7-20-17-30-00");
+			time.setText("2015-5-28-13-49-00");
 			panel.add(time);
 			time.setColumns(10);
 

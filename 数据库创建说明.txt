@@ -1,0 +1,30 @@
+在安装了MySql以后，在字符串界面里输入密码后使用如下语句
+
+create database liuyongjie;
+
+use liuyongjie;
+
+create table TestRecord(
+Name varchar(20),
+Time varchar(20),
+Location varchar(20),
+Remind int,
+Remark varchar(20),
+ID int primary key
+)default charset=utf8;
+
+
+
+create table CourseRecord(
+Name varchar(20),
+Time varchar(20),
+Week varchar(20),
+Location varchar(20),
+Teacher varchar(20),
+Remind int,
+Remark varchar(20),
+ID int primary key
+)default charset=utf8;
+
+
+把上述两个表建好就能够使用本系统了

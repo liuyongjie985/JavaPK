@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
@@ -59,7 +60,7 @@ public class RemindTest {
 				// 考试时间被分割
 				String[] str = ob[index][1].toString().split("-");
 				String newTime = str[0] + "-" + str[1] + "-" + str[2]
-						+ "-07-00-00";
+						+ "-7-00-00";
 				// System.out.println("线程标识号" + index + "现在的时间是"
 				// + now.toString());
 				// System.out.println("线程标识号" + index + "新生成的时间是" +
@@ -89,20 +90,26 @@ public class RemindTest {
 				case 1:// 当天7点
 					if (now.after(df.parse(newTime)) && state == 0 && l > 0) {
 						state = 1;
-						System.out.println("当天7点的提醒");
+						JOptionPane.showMessageDialog(null, "今天会有考试:"
+								+ ob[index][0], "系统信息",
+								JOptionPane.INFORMATION_MESSAGE);
 					}
 					break;
 				case 2:// 提前一天
 					if (l > 0 && l <= (1000 * 60 * 60 * 24) && state == 0) {// 提前一天
 
 						state = 1;
-						System.out.println("提前一天的提醒");
+						JOptionPane.showMessageDialog(null, "明天此时会有考试:"
+								+ ob[index][0], "系统信息",
+								JOptionPane.INFORMATION_MESSAGE);
 					}
 					break;
 				case 3:// 提前5天
 					if (l <= 1000 * 60 * 60 * 24 * 5 && state == 0 && l > 0) {
 						state = 1;
-						System.out.println("提前五天的提醒");
+						JOptionPane.showMessageDialog(null, "五天后此时会有考试:"
+								+ ob[index][0], "系统信息",
+								JOptionPane.INFORMATION_MESSAGE);
 					}
 					break;
 
